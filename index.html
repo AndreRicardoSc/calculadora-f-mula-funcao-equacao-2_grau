@@ -25,6 +25,11 @@
         if (Number.isInteger(yVertice) == false){
             yVertice = `${numeradorYv}/${denominadorYv}`;
         }
+    } else if (Number.isInteger(yVertice) == false){
+        yVertice = `${numeradorYv}/${denominadorYv}`;
+        if (Number.isInteger(xVertice) == false){
+            xVertice = `${numeradorXv}/${denominadorXv}`;
+        }
     } else {
         yVertice = yVertice;
         xVertice = xVertice;
