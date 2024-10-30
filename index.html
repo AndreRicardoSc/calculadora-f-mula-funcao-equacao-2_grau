@@ -1,44 +1,41 @@
-<script>
-    const numX2 = Number(prompt(`Informe o coeficiente A da função/equação`).replace(",", "."));
-    const numX = Number(prompt(`Informe o coeficiente B da função/equação`).replace(",", "."));
-    const num = Number(prompt(`Informe o coeficiente C da função/equação`).replace(",", "."));
+<!DOCTYPE html>
+<html lang="pt-br">
 
-    //calculo delta
-    let delta = (numX * numX) - 4 * numX2 * num;
-    let raizDelta = Math.sqrt(delta);
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferramenta de Cálculos</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
 
-    //calculo raízes
-    let x1 = (-numX + raizDelta) / (2 * numX2);
-    let x2 = (-numX - raizDelta) / (2 * numX2);
-
-    //calculo vértices
-    let numeradorXv = -numX;
-    let denominadorXv = 2 * numX2;
-    let xVertice = numeradorXv / denominadorXv;
-    let numeradorYv = -delta
-    let denominadorYv = 4 * numX2;
-    let yVertice = numeradorYv / denominadorYv;
-
-    //validação vértices para fração
-    if (Number.isInteger(xVertice) == false){
-        xVertice = `${numeradorXv}/${denominadorXv}`;
-        if (Number.isInteger(yVertice) == false){
-            yVertice = `${numeradorYv}/${denominadorYv}`;
-        }
-    } else if (Number.isInteger(yVertice) == false){
-        yVertice = `${numeradorYv}/${denominadorYv}`;
-        if (Number.isInteger(xVertice) == false){
-            xVertice = `${numeradorXv}/${denominadorXv}`;
-        }
-    } else {
-        yVertice = yVertice;
-        xVertice = xVertice;
-    }
-
-    //validação da saída
-    if (delta < 0){
-        document.write(`AQUI ESTA! <br>-Delta = ${delta}.<br>-Delta negativo, é fórmula do segundo grau sem solução (raíz).<br>-O xVértice dessa fórmula se fosse desenhar em um gráfico seria: ${xVertice}<br>-O yVértice dessa fórmula se fosse desenhar um gráfico seria: ${yVertice}<br>-Portanto a coordenada do vértice seria: (${xVertice} , ${yVertice})`);
-    } else{
-        document.write(`AQUI ESTA! <br>-O delta desta fórmula é ${delta} <br> -A raíz do delta é ${raizDelta} <br>-Sua solução é : S = {${x1}, ${x2}}<br>-O xVértice dessa fórmula se fosse desenhar em um gráfico seria: ${xVertice}<br>-O yVértice dessa fórmula se fosse desenhar um gráfico seria: ${yVertice}<br>-Portanto a coordenada do vértice seria: (${xVertice} , ${yVertice})`);
-    }
-</script>
+<body>
+    <header>
+        <h1>EM BREVE...</h1>
+    </header>
+    <section class="introducao">
+        <h2>Ferramentas de Cálculo</h2>
+    </section>
+    <section class="calc-seg">
+        <h3>Funções/Equações do 2º grau</h3>
+        <div class="info">
+            <p>Informe o coeficiente A</p>
+            <input type="text" class="coA" id="coA">
+            <p>Informe o coeficiente B</p>
+            <input type="text" class="coB" id="coB">
+            <p>Informe o coeficiente C</p>
+            <input type="text" class="coC" id="coC"> <br>
+            <button onclick="exibir()">Calcular</button>
+            
+        </div>
+        <div class="resultado" id="resultado">
+            <h3>Resultados</h3>
+           <p>Delta:</p>
+           <p>Raíz de delta:</p>
+           <p>Raíz da equação/função:</p>
+           <p>Coordenada do vértice:</p>
+           <button onclick="limpar()">Limpar Resultados</button>
+        </div>
+    </section>
+    <script src="js.js"></script>
+</body>
+</html>
