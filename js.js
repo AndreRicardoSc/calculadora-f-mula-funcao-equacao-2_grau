@@ -21,13 +21,20 @@ function exibir() {
     let yVertice = numeradorYv / denominadorYv;
 
     // Validação dos vértices para exibir frações
-    if (!Number.isInteger(xVertice)) {
+    if (Number.isInteger(xVertice)== false) {
         xVertice = `${numeradorXv}/${denominadorXv}`;
-    }
-    if (!Number.isInteger(yVertice)) {
+        if (Number.isInteger(yVertice) == false) {
+            yVertice = `${numeradorYv}/${denominadorYv}`;
+        }
+    } else if (Number.isInteger(yVertice) == false) {
         yVertice = `${numeradorYv}/${denominadorYv}`;
+        if (Number.isInteger(xVertice)== false) {
+            xVertice = `${numeradorXv}/${denominadorXv}`;
     }
-
+    } else{
+        xVertice = xVertice;
+        yVertice = yVertice;
+    }
     // Saída dos resultados
     if (delta < 0) {
         document.getElementById("resultado").innerHTML = `
